@@ -99,4 +99,4 @@ Expected after the fix:
 
 ## Deviations
 
-No implementation deviation. The build matched the posted plan: `health.py` wraps the probe in `text()`, the focused test isolates Redis, and the same reproduction now reports PostgreSQL as healthy. The overall handler still returns 503 only because Redis issue #62 is outside this change.
+The implementation still matches the posted code and test plan: `health.py` wraps the probe in `text()`, the focused test isolates Redis, and the same reproduction now reports PostgreSQL as healthy. During the Unit 4 seeded-bug check, `pyproject.toml` still named issue #61 in the health-route mypy suppression comment, so I removed that stale reference as required by `docs/CONTRIBUTING.md`. A focused mypy run confirmed that the existing `attr-defined`, `call-overload`, and `index` suppressions remain necessary for Redis issue #62. The overall handler still returns 503 only because #62 is outside this change.
