@@ -1,281 +1,200 @@
-# Contribution: [Issue Title]
-
-Path: `beat-2-contribution/contribution-story.md`
-
-This file is Assignment 5, and it is graded at the path above; a copy kept anywhere else in
-the repository is not read. **Keep every section header below under its exact name** — the
-format criteria grade exactly that. Your course repo link is the whole submission: no tool
-files and no evidence uploads are part of Assignment 5.
+# Contribution: Pingo Doce locator coverage
 
 **Contribution Number:** [1]
-**Student:** [Student name]
-**GitHub Username:** [your GitHub username, exactly as it appears on your profile - no @, no
-profile URL. Your comments upstream are identified by this name.]
-**Issue:** [GitHub issue link]
-**Pull Request:** [GitHub PR link, once opened]
-
-One repository, built across units 5 to 8, telling the whole story of your real
-contribution. Fill it as you work, not at the end — the sections below ask for evidence that
-is far easier to write down as it happens than to reconstruct in the last weekend.
-
-Contribution Number stays `[1]` unless you make more than one contribution this term; it
-just numbers them.
-
----
+**Student:** Hariom Pughat
+**GitHub Username:** ompug
+**Issue:** https://github.com/alltheplaces/alltheplaces/issues/7950
+**Pull Request:** https://github.com/alltheplaces/alltheplaces/pull/20681
 
 ## Toolkit
 
-Every story section below, from Why I Chose This Issue through Pull
-Request, ends with a Toolkit block: which tool did that phase's work
-and how you used it, what it produced, what difficulties or
-shortcomings it presented, and what you changed or would change
-because of them. Together the blocks are the thread the rubric's
-Toolkit points read, and they are the raw material for your unit-9
-portfolio, so keep them current as you work rather than
-reconstructing them later.
-
-A Toolkit block looks like this (copy it into each story section and
-fill it there):
-
-```text
-**Toolkit**
-
-- Tool: [which tool did this phase's work, and how you used it]
-- What it produced: [described in a sentence or a short excerpt]
-- Difficulties: [what fought you or fell short, or "none met"]
-- What changed: [the patch, revision, or workaround, what you would
-  update, or "nothing"]
-```
-
-This section also keeps one short dated entry per week of tool work,
-starting below: what you built or changed that week, what broke, and
-what you changed because of it. The blocks tell the story where it
-happened; these entries are the toolkit's own timeline.
-
-All four entries are graded. Keep every heading below, and fill each
-one in the week it belongs to.
-
 **Unit 5: Built a scout for Python issues with a pytest check**
 
-On November 18, I built a search for open Python issues tagged `good first issue` that mention pytest. The first query used a flag my GitHub CLI did not recognize, so I switched to `--match title,body`. The scout accepted all five issues it graded, but its shortlist mixed a FastAPI change with CI setup and a GPU compatibility write-up. I updated the ranking to put titles that mention API or FastAPI first because I want practice tracing API behavior.
+On November 18, I searched open Python issues tagged good first issue that mention pytest. The query returned 100 results, with 93 passing the metadata filters, and the scout accepted its top five. The initial query used an unsupported flag, which I changed to --match title,body. I then put API titles first because the original ranking mixed API work with CI setup and GPU documentation.
 
-**Unit 6: [one line on the tool work]**
+**Unit 6: Checked claims and installed the voice guard**
 
-[2-4 sentences: the voice-guard, the repo-memory file. What broke or
-fell short, and what changed because of it. "Nothing broke" counts when
-it is true - say how you know.]
+I installed the voice guard and confirmed that it stopped a comment command with no readable body. Its first real check passed my claim, which I posted through Claude Code. I wrote a local memory file linking the project's existing agent guidance and the source-specific decisions. Two scout accepts were already implemented, so I checked current source coverage before selecting Pingo Doce.
 
-**Unit 7: [one line on the tool work]**
+**Unit 7: Used a manifest and ship-gate before opening the PR**
 
-[2-4 sentences: the ship-gate and your gate manifest. What it produced
-on your real branch, what fought you, what changed because of it.]
+My manifest runs the project's shared brand tests and pre-commit checks. The mounted filesystem does not preserve executable script permissions, so I invoked the installed tools as Python modules. Ship-gate passed both commands and all five PR checks before I opened the upstream PR.
 
-**Unit 8: [one line on the tool work]**
+**Unit 8: Ran the monitor and kept its wait note local**
 
-[2-4 sentences: the PR-monitor and your playbook. What it read, what it
-drafted, what you did with the draft.]
-
----
+I installed the monitor and wrote a seven-day nudge threshold using five recent merged contributor PRs. It initially classified an automated Copilot quota notice as feedback, but its drafted move correctly said that no reply was needed. I read the notice and kept the wait note local. I would improve the state classifier to distinguish an automated review failure from a request for changes.
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs in your own words: how you searched, what your scan
-surfaced, what your scout's verdict said, why this issue fits your
-profile, and what you hope to learn. If your scout's verdict on it
-was reject and you chose it anyway, say so here and say why; choosing
-against your own tool silently is what loses points. Close with an
-honest read of the tool itself: where the scout fell short on a real
-wild search and what you changed or would change, or what convinced
-you it held up. **Record the link to your claim comment in this section too.**
-Not claimed yet? Write `claim pending` and today's date where the link goes,
-and add the link the moment your claim lands.]
+I used Python and good first issue filters on the AI301 Issue Selection site. Several attractive API issues were already claimed or linked to active PRs. I graded HHS/simpler-grants-gov #5277 and MetOffice/CSET #911, then inspected their default branches and found their requested work already present. I selected All the Places #7950 because it was available, had a public source named by a maintainer, and could be verified by comparing the source stores with exported features.
+
+The patched scout accepted Pingo Doce as straightforward. I replaced my strict Bounded contribution check with the supplied scope-feasible rule and separate difficulty notes. The scout helped check policy, activity and claims, but its availability rule missed already-completed work on open issues. I chose a practical Python contribution with observable output, although this project uses shared checks and explicitly excludes individual spider test files. My claim is https://github.com/alltheplaces/alltheplaces/issues/7950#issuecomment-6997361497.
 
 **Toolkit**
 
-- Tool: issue-scout (your scout: your search strategy, your rubric),
-  and how you used it
-- What it produced: [the scan and its verdict on this issue, described]
-- Difficulties: [where it fell short, or "none met" if none did]
-- What changed: [what you patched or would update, or "nothing"]
-
----
+- Tool: issue-scout, used for the five-issue scan and direct grading of curated candidates.
+- What it produced: saved verdicts and a straightforward difficulty note for #7950.
+- Difficulties: open issue status did not prove work was still missing.
+- What changed: added source inspection to my selection process and recorded the rubric gap in scan-notes.md.
 
 ## Understanding the Issue
 
 **Problem Description**
 
-[In your own words, what is broken or missing?]
+All the Places did not have a spider for Pingo Doce's Portuguese supermarket locations.
 
 **Expected Behavior**
 
-[What should happen?]
+A registered spider should retrieve the official locator response and export the stores in the project's standard format.
 
 **Current Behavior**
 
-[What actually happens?]
+The baseline registry had no Pingo Doce spider even though the official endpoint returned 508 stores.
 
 **Affected Components**
 
-[Which parts of the codebase are involved?]
+The new locations/spiders/pingo_doce_pt.py uses JSONBlobSpider, DictParser, OpeningHours and the existing item pipelines.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
-
----
+- Tool: issue-scout and repository inspection.
+- What it produced: confirmation that the source coverage was missing and the issue was available.
+- Difficulties: the issue's old comment reported 488 stores, so I needed current evidence.
+- What changed: used the current 508-store response for all implementation claims.
 
 ## Reproduction Process
 
 **Environment Setup**
 
-[What a stranger would need to stand this up: your operating system,
-the relevant versions (language, runtime, package manager, the project
-itself), and how you set the project up. Then the challenges you faced
-and how you solved them, or that none came up.]
+Linux, Python 3.11.15 and Scrapy 2.19.0. I cloned All the Places, forked it to ompug/alltheplaces, and installed dependencies with uv sync --group dev. The base commit was 0e6c8ea156378d56f09dfe9972b250b3d6c66737.
 
 **Steps to Reproduce**
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+1. Check out the base commit and run uv sync --group dev.
+2. Run `uv run python -m scrapy list | rg pingo`. Before the implementation it returns no match and exit 1.
+3. Search locations/spiders for Pingo Doce and Q1575057. Neither is present.
+4. Run `curl -fsSL 'https://www.pingodoce.pt/wp-content/themes/pingodoce/ajax/pd-ajax.php?action=pd_stores_get_stores' | jq '{success,count:(.data.stores|length)}'`.
 
 **Reproduction Evidence**
 
-- **Commit showing reproduction:** [link to commit in your fork]
-- **Screenshots/logs:** [if applicable]
-- **My findings:** [what you discovered during reproduction; an
-  honest, evidenced cannot-reproduce that led you to re-pick or ask
-  the maintainer belongs here and costs you nothing]
+- **Commit showing reproduction:** none. The missing-spider baseline was captured before adding the new file.
+- **Screenshots/logs:** the registry search returned no match, while the official endpoint returned success=true and count=508.
+- **My findings:** this is missing coverage requested by a feature issue. The source is usable, and the absent registry entry gives a repeatable before state.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
-
----
+- Tool: repro-check, run on the saved claim and reproduction report.
+- What it produced: claim-only accept before posting, followed by an accept on all six combined reproduction checks.
+- Difficulties: the first claim check refused because the completed scout verdict had not yet been appended to scan-output.md.
+- What changed: saved the scout read-out and reran the claim check successfully.
 
 ## Solution Approach
 
 **Analysis**
 
-[Your analysis of the root cause: what is causing the issue, traced
-to the files and functions involved.]
+The official response nests stores under data.stores. Each record has a stable ID, name, coordinates, address, postal code, contact, store-page path and weekly schedule. A new spider can use the project's existing JSON parser and normalization pipelines.
 
 **Proposed Solution**
 
-[High-level description of your fix approach, and what you are
-deliberately NOT changing.]
+Add one JSONBlobSpider for Portugal, using verified Wikidata Q1575057 and the matching NSI brand Pingo Doce. Map contact, county and district to phone, city and state, join store-page paths to the official domain, and pass weekly schedules to OpeningHours. Dated holiday exceptions are outside this version.
 
 **Implementation Plan**
 
-1. [Modify file X to do Y]
-2. [Add or change Z]
-3. [Update tests]
+1. Capture the baseline registry result and source count.
+2. Add the spider using locations_key = ["data", "stores"].
+3. Verify parsed IDs, coordinates and representative output against the source.
+4. Run shared brand tests, pre-commit checks and the cached live crawl.
+5. Record evidence, pass ship-gate and open the upstream PR.
 
-[Record deviations here as they happen: what changed mid-build and
-why. A recorded deviation is honest work; silent drift is not.]
+During the crawl I found four empty schedule lists and a latitude of zero for store 794. I recorded both in plan.md. Empty schedules produce no hours. Store 794 remains in the output with null geometry.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
-
----
+- Tool: plan-check, using plan.md and an unposted plan comment.
+- What it produced: accept on all six required checks.
+- Difficulties: missing coverage needed a plan around registration and exported data rather than an exception fix.
+- What changed: specified the API key path, field mapping, observable result and upstream rule against individual spider tests.
 
 ## Testing Strategy
 
-[What observable checks prove the fix: your reproduction steps re-run
-against the built change (before and after), and the repo's own test
-suite or checks with the outcome shown. "Tests pass" with nothing
-observable named is not a strategy.]
+Before the change the registry search returned no Pingo Doce spider. After the change, the following cached crawl completed with item_scraped_count=508:
+
+```bash
+uv run python -m scrapy crawl pingo_doce_pt -s HTTPCACHE_ENABLED=True -s HTTPCACHE_EXPIRATION_SECS=604800 -O /tmp/pingo-doce.geojson -L INFO
+uv run python -m pytest tests/test_item_attributes.py -q
+uv run python -m pre_commit run --files locations/spiders/pingo_doce_pt.py
+```
+
+The brand tests passed all 3 tests with one installed anyio deprecation warning. Pre-commit passed the applicable naming, formatting, imports and lint checks. A temporary parsing assertion compared all 508 source IDs and verified 507 nonzero coordinate pairs within Portugal's bounds. The export contains 508 features, 507 with geometry. Store 794 has null geometry because the source reports latitude zero.
+
+Store 451 exports branch 1º de Dezembro, postcode 1200-358, coordinates [-9.140362,38.713742], normalized phone +351 938 875 501, hours Mo-Su 08:00-21:00, and shop=supermarket. Four records have no weekly hours. I followed AGENTS.md's shared-check approach without adding an individual spider test file.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
-
----
+- Tool: the repository's pytest and pre-commit commands plus a real cached crawl.
+- What it produced: 508 exported features, passing checks and source-by-source ID comparison.
+- Difficulties: a source schedule can be an empty list, and one latitude is invalid.
+- What changed: handled the observed empty schedule and omitted the invalid coordinate pair.
 
 ## Implementation Notes
 
-[A running log, added to as you work. Date each entry. What you
-built, decisions you made when you made them, wrong turns included.]
+**2026-11-18**
 
-**[Date]**
+Ran the scan, used the curated tracker, and checked current code to avoid completed or actively claimed work. Chose Pingo Doce #7950 and posted a bounded claim with a two-day report window.
 
-[Entry]
+**2026-11-18**
 
-**[Date]**
+Verified the brand identity through Wikidata and NSI. Built the spider, discovered empty schedules in the first crawl, and handled the real source representation. A coordinate assertion then identified latitude zero for store 794, which I retained with null geometry.
 
-[Entry]
+**2026-11-18**
+
+Committed the 25-line spider as 64d75bc. Ship-gate passed the manifest checks and PR precheck. Opened PR #20681 against upstream master and ran the PR monitor.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
-
----
+- Tool: local memory file, plan-check and ship-gate.
+- What it produced: a one-file implementation traced to its plan and recorded deviations.
+- Difficulties: Python entry-point scripts on the mounted filesystem were not executable.
+- What changed: used uv run python -m invocations for the same installed tools.
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when opened]
+**PR Link:** https://github.com/alltheplaces/alltheplaces/pull/20681
 
-**PR Description:** [what the PR says; much of the content above
-adapts into it]
+**PR Description:** The description identifies the public source, explains missing coverage, records the 508-feature crawl and shared check outcomes, and discloses the empty schedules, invalid coordinate pair, and omitted holiday exceptions. It links issue #7950 and contains the required AI-use disclosure.
 
 **Maintainer Feedback:**
 
-- [Date]: [feedback received, or "none yet"; silence is a normal
-  state and costs you nothing]
-- [Date]: [how you addressed it]
+- 2026-11-18: none yet from a human maintainer. An automated Copilot review reported an exhausted review quota. The monitor drafted a wait note, which I kept local.
 
-**Status:** [Awaiting review / Iterating / Merged / Closed. The
-status is a fact you record, never a grade: the PR is graded as
-opened.]
+**Status:** Awaiting review.
 
 **Toolkit**
 
-- Tool:
-- What it produced:
-- Difficulties:
-- What changed:
-
----
+- Tool: ship-gate followed by the voice guard on the Claude Code PR command.
+- What it produced: PASS, then the upstream PR with exactly one spider file.
+- Difficulties: the first direct grading attempts needed explicit access to installed skill evidence.
+- What changed: supplied the installed directories and saved evidence before rerunning grading.
 
 ## Learnings and Reflections
 
 **Technical Skills Gained**
 
-[What you learned technically, named concretely.]
+I learned how JSONBlobSpider delegates common field parsing to DictParser and how the item pipelines apply country, brand and category data. I also learned to compare all source IDs and inspect individual output fields instead of relying on the item count.
 
 **Challenges Overcome**
 
-[What was hard and how you solved it; point at the real events, the
-Toolkit blocks above are full of them.]
+The first crawl exposed empty schedules. The coordinate check caught a zero latitude that a successful crawl alone would have missed. Checking the current source code also prevented me from claiming an open issue whose requested work already existed.
 
 **What I'd Do Differently Next Time**
 
-[Reflection on your process.]
-
----
+I would inspect the full source shape before writing the schedule loop and make default-branch coverage part of the scout's required checks. I would record the baseline in a saved script earlier so the complete verification command is easier to reuse.
 
 ## Resources Used
 
-[What actually helped, not a reading list. List things this story
-already shows you using: the doc you followed to set the environment
-up, the thread that explained the bug, the person who answered you.
-One real entry beats ten plausible ones.]
-
-- [Link to documentation that helped]
-- [Discussion, issue, or post that helped]
+- AI301 Unit 5 through Unit 8 starter instructions for the scout, voice guard, ship-gate and monitor.
+- https://github.com/alltheplaces/alltheplaces/issues/7950 for the public source and maintainer context.
+- https://github.com/alltheplaces/alltheplaces/blob/master/AGENTS.md for spider design and validation rules.
+- https://github.com/alltheplaces/alltheplaces/blob/master/docs/PULL_REQUEST.md for contribution guidance.
+- https://www.wikidata.org/wiki/Q1575057 and the project's NSI command for brand verification.
+- https://www.pingodoce.pt/wp-content/themes/pingodoce/ajax/pd-ajax.php?action=pd_stores_get_stores for source records.
