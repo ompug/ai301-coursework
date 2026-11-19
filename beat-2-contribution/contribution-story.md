@@ -55,10 +55,9 @@ happened; these entries are the toolkit's own timeline.
 All four entries are graded. Keep every heading below, and fill each
 one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: Built a scout for Python issues with a pytest check**
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
+On November 18, I built a search for open Python issues tagged `good first issue` that mention pytest. The first query used a flag my GitHub CLI did not recognize, so I switched to `--match title,body`. The scout accepted all five issues it graded, but its shortlist mixed a FastAPI change with CI setup and a GPU compatibility write-up. I updated the ranking to put titles that mention API or FastAPI first because I want practice tracing API behavior.
 
 **Unit 6: [one line on the tool work]**
 
